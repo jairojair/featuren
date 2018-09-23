@@ -1,0 +1,40 @@
+version: '2'
+
+services:
+
+  app:
+    build: .
+    volumes:
+      - .:/code
+
+    working_dir: /code
+
+    ports:
+      - 8000:8000
+      - 7000:7000
+
+    depends_on:
+      - database
+
+    command: make
+
+    environment:
+      APP_ENV: dev
+      
+      DB_HOST: database
+      DB_NAME: db
+      DB_USER: user
+      DB_PASS: secret
+
+      JWT_SECRET: DevSecret
+
+  database:
+    image: postgres:10-alpine
+
+    ports:
+      - 8001:5432
+
+    environment:
+      - POSTGRES_DB=db
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=secret

@@ -1,0 +1,33 @@
+language: python
+
+cache: pip
+
+python:
+    - "3.6"
+
+install:
+    - pip install -r requirements.txt
+    - pip install coveralls
+
+before_script:
+  - psql -c 'create database db;' -U postgres
+
+script:
+    - make migrate
+    - make tests
+    - mkdocs build
+
+after_script:
+    - coveralls
+
+services:
+  - postgresql
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: site/
+  github_token: $GITHUB_TOKEN
+  allow-empty-commit: true
+  on:
+    branch: master

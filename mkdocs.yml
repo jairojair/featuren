@@ -1,0 +1,41 @@
+site_name: 'Featuren'
+site_description: 'A simple application for managing your features in production.'
+site_url: 'http://jairojair.com/featuren/'
+
+repo_name: 'jairojair/featuren'
+repo_url: 'https://github.com/jairojair/featuren'
+
+theme:
+  name: 'material'
+  logo:
+    icon: 'done_all'
+  palette:
+    primary: 'white'
+    accent: 'green'
+
+extra_css:
+  - 'assets/stylesheets/extra.css'
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - footnotes
+  - codehilite:
+      linenums: true
+  - toc:
+      permalink: '#'
+  
+  - pymdownx.superfences
+
+nav:
+  - Introduction: 'index.md'
+  - Quickstart: 'started.md'
+  - API documentation:
+    - Authentication: 'api/auth.md'
+    - Users: 'api/users.md'
+    - Services: 'api/services.md'
+    - Features: 'api/features.md'
+
+  - Tutorial: 'tutorial.md'
+
+dev_addr: '0.0.0.0:7000'
