@@ -32,7 +32,7 @@ def test_create_and_delete_service(client, auth):
 
     response = client.delete(location, auth=auth)
     assert response.status_code == 200
-    assert response.json() == {"message": "Service deleted successfully"}
+    assert response.json() == {"message": "Service deleted successfully."}
 
 
 def test_get_service_by_id(client, service, auth):
@@ -46,4 +46,4 @@ def test_get_service_not_found(client, number, auth):
 
     response = client.get(f"/services/{number}", auth=auth)
     assert response.status_code == 404
-    assert response.json() == {"message": f"The service with id {number} not found"}
+    assert response.json() == {"message": f"Service not found."}

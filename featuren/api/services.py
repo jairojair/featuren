@@ -21,7 +21,7 @@ def create_service(serviceData: ServiceType):
 
     service = Service.create(**serviceData, token=secrets.token_urlsafe(31))
 
-    msg = "Service created successfully"
+    msg = "Service created successfully."
     log.info(f"{msg} - ID: {service.id}")
 
     headers = {"Content-Location": f"/services/{service.id}"}
@@ -35,7 +35,7 @@ def get_service(id):
     service = Service.find(id)
 
     if not service:
-        msg = f"The service with id {id} not found"
+        msg = f"Service not found."
         raise exceptions.NotFound({"message": msg})
 
     return service.serialize()
@@ -49,11 +49,11 @@ def delete_service(id):
     service = Service.find(id)
 
     if not service:
-        msg = f"The service with id {id} not found"
+        msg = f"Service not found."
         raise exceptions.NotFound({"message": msg})
 
     service.delete()
-    msg = "Service deleted successfully"
+    msg = "Service deleted successfully."
     log.info(f"{msg} - ID: {id}")
     return {"message": msg}
 
