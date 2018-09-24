@@ -9,11 +9,11 @@
 
 ### Request
 ```bash
-curl -X "POST" "http://0.0.0.0:8000/services/" \
+curl -X "POST" "http://0.0.0.0:8000/features/" \
      -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d '{
-            "id": "new-search-button",
+            "id": "search-button",
             "enabled": true,
             "deny": false,
             "services": [],
@@ -24,7 +24,7 @@ curl -X "POST" "http://0.0.0.0:8000/services/" \
 
 ### Response
 ```json tab="201"
-{"message": "Feature created successfully"}
+{"message": "Feature created successfully."}
 ```
 
 ```json tab="401"
@@ -41,7 +41,7 @@ curl -X "POST" "http://0.0.0.0:8000/services/" \
 
 ### Request
 ```bash
-curl "http://{host}/services/" \
+curl "http://{host}/features/" \
      -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...'
 ```
 
@@ -49,7 +49,7 @@ curl "http://{host}/services/" \
 ```json tab="200"
 [
   {
-    "id": "new-search-button",
+    "id": "search-button",
     "version": "1.0.0",
     "enabled": true,
     "deny": false,
@@ -70,18 +70,18 @@ curl "http://{host}/services/" \
 ```
 
 ## Get feature by id
-<span class="resource"><span class="base get">GET</span> /features/new-search-button</span>
+<span class="resource"><span class="base get">GET</span> /features/{id}</span>
 
 ### Request
 ```bash
-curl "http://{host}/features/new-search-button" \
+curl "http://{host}/features/search-button" \
      -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...'
 ```
 
 ### Response
 ```json tab="200"
 {
-  "id": "new-search-button",
+  "id": "search-button",
   "version": "1.0.0",
   "enabled": true,
   "deny": false,
@@ -89,21 +89,20 @@ curl "http://{host}/features/new-search-button" \
 }
 ```
 
-```json tab="404"
-{"message": "Feature not found"}
-```
-
 ```json tab="401"
 {"message": "Unauthorized."}
 ```
 
+```json tab="404"
+{"message": "Feature not found."}
+```
 
 ## Update feature
-<span class="resource"><span class="base put">PUT</span> /features/new-search-button</span>
+<span class="resource"><span class="base put">PUT</span> /features/{id}</span>
 
 ### Request
 ```bash
-curl -X "PUT" "http://{host}/services/new-search-button" \
+curl -X "PUT" "http://0.0.0.0:8000/features/search-button" \
      -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d '{
@@ -117,39 +116,39 @@ curl -X "PUT" "http://{host}/services/new-search-button" \
 ### Response
 
 ```json tab="200"
-{"message": "Feature update successfully"}
-```
-
-```json tab="404"
-{"message": "Feature not found"}
+{"message": "Feature update successfully."}
 ```
 
 ```json tab="401"
 {"message": "Unauthorized."}
 ```
 
+```json tab="404"
+{"message": "Feature not found."}
+```
+
 ## Delete feature
-<span class="resource"><span class="base delete">DELETE</span> /features/new-search-button</span>
+<span class="resource"><span class="base delete">DELETE</span> /features/{id}</span>
 
 ### Request
 
 ```bash
-curl "http://{host}/features/new-search-button" \
+curl "http://0.0.0.0:8000/features/search-button" \
      -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...'
 ```
 
 ### Response
 
 ```json tab="200"
-{"message": "Feature deleted successfully"}
-```
-
-```json tab="404"
-{"message": "Feature not found"}
+{"message": "Feature deleted successfully."}
 ```
 
 ```json tab="401"
 {"message": "Unauthorized."}
+```
+
+```json tab="404"
+{"message": "Feature not found."}
 ```
 
 ### Feature data
@@ -175,17 +174,17 @@ curl "http://{host}/features/new-search-button" \
     <tr>
       <td>enabled</td>
       <td>Bool</td>
-      <td>Feature enabled.</td>
+      <td>If value is <b>true</b> the feature can be used by all services. If value is <b>false</b> only services in services list can be use this feature.</td>
     </tr>
     <tr>
       <td>deny</td>
       <td>Bool</td>
-      <td>Feature deny.</td>
+      <td>If value is <b>​true</b> ​the feature can be used by all services except the services in services list.</td>
     </tr>
     <tr>
       <td>services</td>
       <td>Array</td>
-      <td>Feature services</td>
+      <td>Services list.</td>
     </tr>
 
   </tbody>

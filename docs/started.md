@@ -1,7 +1,7 @@
 
 ## Install from scratch!
 
-Firstly, install requirements below:
+Firstly, install requirements down below:
 
 - [Docker](https://www.docker.com/products/docker-desktop)
 - [Git](https://git-scm.com) 

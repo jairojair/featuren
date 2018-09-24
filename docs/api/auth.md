@@ -3,7 +3,7 @@
 ## Login
 <span class="resource"><span class="base post">POST</span> /auth/login</span>
 
-!!! warning "Use the credentials created before in [Quickstart](../started.md) to login."
+!!! warning "Use the credentials created before in [Quickstart](/started/#add-new-user) to login."
 
 ### Request
 
@@ -12,7 +12,6 @@
 POST /auth/login HTTP/1.1
 Content-Type: application/json; charset=utf-8
 Host: 0.0.0.0:8000
-Connection: close
 
 {"username":"user","password":"secret"}
 ```
@@ -65,7 +64,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...
 ```
 
 ```bash tab="Curl"
-curl "http://{host}/users/" \
+curl "http://0.0.0.0:8000/users/" \
      -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...'
 ```
 

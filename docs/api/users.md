@@ -79,12 +79,12 @@ curl "http://0.0.0.0:8000/users/1" \
 }
 ```
 
-```json tab="404"
-{"message": "User not found"}
-```
-
 ```json tab="401"
 {"message": "Unauthorized."}
+```
+
+```json tab="404"
+{"message": "User not found"}
 ```
 
 ## Update user
@@ -104,15 +104,15 @@ curl -X "PUT" "http://0.0.0.0:8000/users/1" \
 ### Response
 
 ```json tab="200"
-{"message": "User update successfully"}
-```
-
-```json tab="404"
-{"message": "User not found"}
+{"message": "User update successfully."}
 ```
 
 ```json tab="401"
 {"message": "Unauthorized."}
+```
+
+```json tab="404"
+{"message": "User not found."}
 ```
 
 ```json tab="409"
@@ -132,17 +132,16 @@ curl "http://0.0.0.0:8000/users/1" \
 ### Response
 
 ```json tab="200"
-{"message": "User deleted successfully"}
-```
-
-```json tab="404"
-{"message": "User not found"}
+{"message": "User deleted successfully."}
 ```
 
 ```json tab="401"
 {"message": "Unauthorized."}
 ```
 
+```json tab="404"
+{"message": "User not found."}
+```
 
 ### User data
 <table>

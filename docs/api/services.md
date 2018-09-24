@@ -21,7 +21,7 @@ curl -X "POST" "http://0.0.0.0:8000/services/" \
 
 ### Response
 ```json tab="201"
-{"message": "Service created successfully"}
+{"message": "Service created successfully."}
 ```
 
 ```json tab="401"
@@ -77,12 +77,12 @@ curl "http://0.0.0.0:8000/services/1" \
 }
 ```
 
-```json tab="404"
-{"message": "Service not found"}
-```
-
 ```json tab="401"
 {"message": "Unauthorized."}
+```
+
+```json tab="404"
+{"message": "Service not found."}
 ```
 
 
@@ -103,15 +103,15 @@ curl -X "PUT" "http://0.0.0.0:8000/services/" \
 ### Response
 
 ```json tab="200"
-{"message": "Service update successfully"}
-```
-
-```json tab="404"
-{"message": "Service not found"}
+{"message": "Service update successfully."}
 ```
 
 ```json tab="401"
 {"message": "Unauthorized."}
+```
+
+```json tab="404"
+{"message": "Service not found."}
 ```
 
 ## Delete service
@@ -127,15 +127,15 @@ curl "http://0.0.0.0:8000/services/1" \
 ### Response
 
 ```json tab="200"
-{"message": "Service deleted successfully"}
-```
-
-```json tab="404"
-{"message": "Service not found"}
+{"message": "Service deleted successfully."}
 ```
 
 ```json tab="401"
 {"message": "Unauthorized."}
+```
+
+```json tab="404"
+{"message": "Service not found."}
 ```
 
 ### Service data

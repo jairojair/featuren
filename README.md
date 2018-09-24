@@ -11,7 +11,7 @@
 
 ### Introduction
 
-Feature flags give a software organization the power to reduce risk, iterate quicker, and gain more control. Feature flags allow you to decouple feature rollout from code deployment. This separation allows you unprecedented control of who sees what when, independent of release. And the “you” can be anyone in your organization – from developers, ops, designers, product managers, or marketers. Allowing control over a release unlocks the true power of your software.
+Feature flags/toggles/controls are a software development best practice of gating functionality, used by companies like Google and Facebook. Functionality can be deployed “off”, then turned on via the feature flag, separate from deployment.
 
 More details about: http://jairojair.com/featuren/
 
