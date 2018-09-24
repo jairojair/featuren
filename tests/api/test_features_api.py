@@ -120,11 +120,11 @@ def test_create_and_delete_feature(client, auth):
 
     response = client.delete(location, auth=auth)
     assert response.status_code == 200
-    assert response.json() == {"message": "Feature deleted successfully"}
+    assert response.json() == {"message": "Feature deleted successfully."}
 
 
 def test_get_feature_not_found(client, number, auth):
 
     response = client.get(f"/features/{number}", auth=auth)
     assert response.status_code == 404
-    assert response.json() == {"message": f"The feature with id {number} not found"}
+    assert response.json() == {"message": f"Feature not found."}

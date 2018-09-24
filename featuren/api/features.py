@@ -30,13 +30,13 @@ def create_feature(featureData: FeatureCreate):
     _check_version_format(featureData.version)
 
     if Feature.find(featureData.id):
-        msg = f"The feature id {featureData.id} isn't available. Please try another."
+        msg = f"The feature id isn't available. Please try another."
         return http.JSONResponse({"message": msg}, status_code=409)
 
     _check_services_exists(featureData.services)
 
     feature = Feature.create(**featureData)
-    msg = "Feature created successfully"
+    msg = "Feature created successfully."
     log.info(f"{msg} - ID: {feature.id}")
 
     feature.update_services(featureData.services)
@@ -80,7 +80,7 @@ def update_feature(auth: AuthData, featureData: FeatureUpdate, id):
 
     feature.update(**featureData)
 
-    msg = "Feature update successfully"
+    msg = "Feature update successfully."
     log.info(f"{msg} - ID: {id}")
     return {"message": msg}
 
@@ -92,7 +92,7 @@ def delete_feature(id):
 
     feature = _find_feature(id)
     feature.delete()
-    msg = "Feature deleted successfully"
+    msg = "Feature deleted successfully."
     log.info(f"{msg} - ID: {id}")
     return {"message": msg}
 
@@ -113,7 +113,7 @@ def _check_rules(feature, auth):
         query = not query
 
     if not query:
-        msg = f"Access denied to resource"
+        msg = f"Access denied to resource."
         log.info(f"{msg} - ID: {id}, service: {auth.service.name}")
         raise exceptions.Forbidden({"message": msg})
 
@@ -126,7 +126,7 @@ def _find_feature(id):
     feature = Feature.find(id)
 
     if not feature:
-        msg = f"The feature with id {id} not found"
+        msg = f"Feature not found."
         raise exceptions.NotFound({"message": msg})
 
     return feature
@@ -140,7 +140,7 @@ def _find_service(id):
     service = Service.find(id)
 
     if not service:
-        msg = f"The service with id {id} not found"
+        msg = f"Service not found"
         raise exceptions.NotFound({"services": msg})
 
 
