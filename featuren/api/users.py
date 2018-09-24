@@ -26,7 +26,7 @@ def create_user(userData: UserType):
     user = User()
     user = user.create(userData)
 
-    msg = "User created successfully"
+    msg = "User created successfully."
     log.info(f"{msg} - ID: {user.id}")
 
     headers = {"Content-Location": f"/users/{user.id}"}
@@ -40,7 +40,7 @@ def get_user(id):
     user = User.find(id)
 
     if not user:
-        msg = f"The user with id {id} not found"
+        msg = f"User not found."
         raise exceptions.NotFound({"message": msg})
 
     return user.serialize()
@@ -53,12 +53,12 @@ def update_user(userData: UserType, id):
     user = User.find(id)
 
     if not user:
-        msg = f"The user with id {id} not found"
+        msg = f"User not found."
         raise exceptions.NotFound({"message": msg})
 
     user.update(**userData)
 
-    msg = "User update successfully"
+    msg = "User update successfully."
     log.info(f"{msg} - ID: {id}")
     return {"message": msg}
 
@@ -71,11 +71,11 @@ def delete_user(id):
     user = User.find(id)
 
     if not user:
-        msg = f"The user with id {id} not found"
+        msg = f"User not found."
         raise exceptions.NotFound({"message": msg})
 
     user.delete()
-    msg = "User deleted successfully"
+    msg = "User deleted successfully."
     log.info(f"{msg} - ID: {id}")
     return {"message": msg}
 

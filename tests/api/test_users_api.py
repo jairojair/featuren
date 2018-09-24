@@ -47,11 +47,11 @@ def test_update_user(client, user, auth):
 
     response = client.put(f"/users/{user.id}", user_data, auth=auth)
     assert response.status_code == 200
-    assert response.json() == {"message": "User update successfully"}
+    assert response.json() == {"message": "User update successfully."}
 
 
 def test_get_user_not_found(client, number, auth):
 
     response = client.get(f"/users/{number}", auth=auth)
     assert response.status_code == 404
-    assert response.json() == {"message": f"The user with id {number} not found"}
+    assert response.json() == {"message": f"User not found."}
