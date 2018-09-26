@@ -10,3 +10,4 @@ python-decouple==3.1.0
 PyJWT==1.6.4
 passlib==1.7.1
 mkdocs-material==3.0.4
+py_database_url==0.0.4

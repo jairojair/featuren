@@ -1,33 +1,21 @@
+import os
 import sys
 import logging
 
 from orator import Model
 from orator import DatabaseManager
+from py_database_url import orator
 
-from decouple import config
+database_settings = orator()
 
-DB_HOST = config("DB_HOST")
-DB_NAME = config("DB_NAME")
-DB_USER = config("DB_USER")
-DB_PASS = config("DB_PASS")
-
-jwt_settings = {"secret": config("JWT_SECRET"), "exp": 120, "algorithm": "HS256"}
-
-
-DATABASES = {
-    "postgres": {
-        "driver": "postgres",
-        "host": DB_HOST,
-        "database": DB_NAME,
-        "user": DB_USER,
-        "password": DB_PASS,
-        "prefix": "",
-    }
-}
-
-
-db = DatabaseManager(DATABASES)
+db = DatabaseManager(database_settings)
 Model.set_connection_resolver(db)
+
+jwt_settings = {
+    "secret": os.environ.get("JWT_SECRET"),
+    "exp": 120,
+    "algorithm": "HS256",
+}
 
 # Logs
 

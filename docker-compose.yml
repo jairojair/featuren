@@ -19,14 +19,10 @@ services:
     command: make
 
     environment:
-      APP_ENV: dev
-      
-      DB_HOST: database
-      DB_NAME: db
-      DB_USER: user
-      DB_PASS: secret
 
-      JWT_SECRET: DevSecret
+      - DATABASE_URL=postgres://user:secret@database:5432/db
+
+      - JWT_SECRET=DevSecret
 
   database:
     image: postgres:10-alpine
