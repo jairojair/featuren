@@ -19,7 +19,7 @@ Firstly, install requirements down below:
 
 ##### Add new user
 
-	docker-compose run app make add_user
+	docker-compose run app make add-user
 
 ##### Run
 

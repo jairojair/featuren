@@ -27,5 +27,5 @@ reset:
 serve:
 	@mkdocs serve
 
-add_user:
-	@python cli.py add_user
+add-user:
+	@python cli.py add-user
