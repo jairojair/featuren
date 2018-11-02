@@ -1,6 +1,6 @@
 site_name: 'Featuren'
 site_description: 'A simple application for managing your features in production.'
-site_url: 'http://jairojair.com/featuren/'
+site_url: 'https://jairojair.github.io/featuren/'
 
 repo_name: 'jairojair/featuren'
 repo_url: 'https://github.com/jairojair/featuren'

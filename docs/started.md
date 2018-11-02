@@ -30,6 +30,6 @@ Access: [http://0.0.0.0:8000](http://0.0.0.0:8000) and your browser will show th
 ```bash
 {
 	"message":"Welcome to Featuren!",
-	"documentation":"http://jairojair.com/featuren/"
+	"documentation":"https://jairojair.github.io/featuren/"
 }
 ```

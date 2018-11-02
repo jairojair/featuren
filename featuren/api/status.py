@@ -11,7 +11,7 @@ def status():
 
     ret = {
         "message": "Welcome to Featuren!",
-        "documentation": "http://jairojair.com/featuren/",
+        "documentation": "https://jairojair.github.io/featuren/",
     }
     return ret
 

@@ -13,7 +13,7 @@
 
 Feature flags/toggles/controls are a software development best practice of gating functionality, used by companies like Google and Facebook. Functionality can be deployed “off”, then turned on via the feature flag, separate from deployment.
 
-More details about: http://jairojair.com/featuren/
+More details about: https://jairojair.github.io/featuren/
 
 
 The main goal for this project is create a simple and open source application for managing your features in production.
