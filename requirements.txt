@@ -7,7 +7,7 @@ orator==0.9.7
 psycopg2==2.7.3
 wsgicors==0.7.0
 python-decouple==3.1.0
-PyJWT==1.6.4
+PyJWT==2.4.0
 passlib==1.7.1
 mkdocs-material==3.0.4
 py_database_url==0.0.4
